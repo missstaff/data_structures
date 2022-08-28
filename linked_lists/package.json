@@ -1,0 +1,19 @@
+{
+  "name": "linked_lists",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "practice building singly and doubly linked lists",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "data",
+    "structures",
+    "liked",
+    "list"
+  ],
+  "author": "Shawna (Miss)",
+  "license": "ISC"
+}
