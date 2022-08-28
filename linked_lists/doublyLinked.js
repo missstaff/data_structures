@@ -66,50 +66,6 @@ class doublyLinked{
     return this;
   };
 
-  remove(index){
-
-    if(typeof index !== "number" && index < 0) return;
-
-    const prevItem = this.traverseToIndex(index-1);
-    const curItem = prevItem.next; //item to delete
-    const next = curItem.next;
-
-    prevItem.next = {
-      value: next.value,
-      next: next.next,
-    }
-
-    next.previous = prevItem;
-    this.length--;
-
-    return this;
-  };
-
-  reverse(){
-
-    let curItem = this.tail; 
-    let nextItem = curItem.next;
-    let prevItem = curItem.previous;
-
-    while(curItem !== null){
-      if(this.length < 2) return;
-     
-      const temp = new Node(curItem.value);
-      temp.previous = curItem.previous;
-      temp.next = curItem.next;
-
-      prevItem.next = prevItem.previous;
-      prevItem.previous = temp;
-      
-     
-     
-      curItem = curItem.previous;
-    }
-    this.head.previous = null;
-    this.tail.next = null;
-    return this;
-  }
-
   traverseToIndex(index){
 
     if(typeof index !== "number" && index < 0) return;
