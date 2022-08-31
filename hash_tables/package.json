@@ -1,0 +1,19 @@
+{
+  "name": "hash_tables",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "arrayHashTable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hash",
+    "tables",
+    "linked",
+    "list",
+    "array"
+  ],
+  "author": "Shawna (Miss)",
+  "license": "ISC"
+}
