@@ -79,7 +79,7 @@ class HashTable {
     return valuesArray;
   };
 
-  printList(){
+  print(){
 
     const arr = [];
     for(let i = 0; i < this.data.length; i++){
@@ -104,5 +104,7 @@ const keys = myHashTable.keys();
 const values = myHashTable.values();
 
 myHashTable.remove("bananas");
+
+myHashTable.print()
 
 
