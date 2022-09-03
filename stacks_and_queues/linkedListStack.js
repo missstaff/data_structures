@@ -1,9 +1,4 @@
-class Node {
-  constructor(value){
-    this.value = value;
-    this.next = null;
-  }
-}
+import Node from "./node.js";
 
 class Stack{
   constructor(){
@@ -37,12 +32,13 @@ class Stack{
     if(!this.top) return null;
     if(this.top === this.bottom) this.bottom = null;
 
-    let cur = this.top;
-    let next = cur.next;
+    const cur = this.top;
+    const next = cur.next;
     this.top = next;
     this.length--;
     
     return cur;
   }
 }
+
 
