@@ -1,0 +1,12 @@
+{
+  "name": "stacks_and_queues",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "arrayStack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shawna (Miss)",
+  "license": "ISC"
+}

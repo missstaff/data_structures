@@ -79,6 +79,17 @@ class HashTable {
     return valuesArray;
   };
 
+  print(){
+
+    const arr = [];
+    for(let i = 0; i < this.data.length; i++){
+      if(this.data[i]){
+        arr.push(this.data[i]);
+      }
+    }
+    return console.log(arr);
+  };
+
 }
 
 const myHashTable = new HashTable(50);
@@ -93,5 +104,7 @@ const keys = myHashTable.keys();
 const values = myHashTable.values();
 
 myHashTable.remove("bananas");
+
+myHashTable.print()
 
 
