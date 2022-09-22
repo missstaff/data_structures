@@ -1,5 +1,7 @@
-function findFactorialRecursive(number){
+/* Factorial example: 5! = 5 * 4 * 3 * 2 * 1 = 120*/
 
+function findFactorialRecursive(number){
+  
   if(number === 2) {
     return 2;
   }
@@ -14,5 +16,5 @@ function findFactorialIterative(number){
   }
   return answer;
 }
-// console.log(findFactorialIterative(5));
-// console.log(findFactorialRecursive(5));
+console.log(findFactorialIterative(5));
+console.log(findFactorialRecursive(5));
