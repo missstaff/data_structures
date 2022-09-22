@@ -1,6 +1,43 @@
-// Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
+
+//REVERSE A STRING//
+const string = 'Hi my name is Miss';
+
+function reverse1(str){
+  if(typeof str !== 'string' || !str || str.length < 2) return;
+
+  const newArr = [];
+
+  for(let i = str.length; i >= 0; i--){
+    newArr.push(str[i]);
+  }
+
+  return newArr.join('');
+}
+
+function reverse2(str){
+  if(typeof str !== 'string' || !str || str.length < 2) return;
+  return str.split('').reverse().join('');
+}
+
+const reverse3 = (str) =>  str.split('').reverse().join('');
+
+const reverse4 = (str) =>  [...str].reverse().join('');
 
 
+// const revStr1 = reverse1(string);
+// console.log(revStr1);
+
+// const revStr2 = reverse2(string);
+// console.log(revStr2);
+
+// const revStr3 = reverse3(string);
+// console.log(revStr3);
+
+// const revStr4 = reverse4(string);
+// console.log(revStr4);
+
+
+//CHECK TO SEE IF 2 ARRAYS HAVE THE SAME ITEM//
 let array1 = ['a', 'b', 'c', 'x'];
 let array2 = ['z', 'y', 'i'];
 // should return false.
@@ -60,44 +97,6 @@ function containsCommonItem3(arr1, arr2) {
 // console.log("2", {x});
 // x = containsCommonItem3(array1, array2);
 // console.log("3", {x});
-
-
-//REVERSE A STRING//
-const string = 'Hi my name is Miss';
-
-function reverse1(str){
-  if(typeof str !== 'string' || !str || str.length < 2) return;
-
-  const newArr = [];
-
-  for(let i = str.length; i >= 0; i--){
-    newArr.push(str[i]);
-  }
-
-  return newArr.join('');
-}
-
-function reverse2(str){
-  if(typeof str !== 'string' || !str || str.length < 2) return;
-  return str.split('').reverse().join('');
-}
-
-const reverse3 = (str) =>  str.split('').reverse().join('');
-
-const reverse4 = (str) =>  [...str].reverse().join('');
-
-
-// const revStr1 = reverse1(string);
-// console.log(revStr1);
-
-// const revStr2 = reverse2(string);
-// console.log(revStr2);
-
-// const revStr3 = reverse3(string);
-// console.log(revStr3);
-
-// const revStr4 = reverse4(string);
-// console.log(revStr4);
 
 
 //MERGE SORTED ARRAYS//
