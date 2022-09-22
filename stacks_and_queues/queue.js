@@ -33,7 +33,7 @@ class Queue{
 
     if(this.first === this.last) this.last = null;
 
-    const temp =this.first;
+    const temp = this.first;
     this.first = this.first.next;
     this.length--;
     return temp;
