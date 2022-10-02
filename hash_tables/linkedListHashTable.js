@@ -1,5 +1,6 @@
 import List from "./list.js";
 import Node from "./node.js";
+/*WIP*/
 
 class HashTable {
   constructor(size) {
