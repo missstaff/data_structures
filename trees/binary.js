@@ -1,9 +1,10 @@
 import Node from "./node.js";
 
-class BinarySearchTree {
+class Tree {
   constructor() {
     this.root = null;
   }
+
   insert(value) {
     const newNode = new Node(value);
 
@@ -31,7 +32,6 @@ class BinarySearchTree {
       }
     }
   }
-
 
   lookup(value) {
 
@@ -116,18 +116,59 @@ class BinarySearchTree {
       }
     }
   }
+
+  breadthFirstSearch() {
+    let currentNode = this.root;
+    let list = [];
+    let queue = [];
+
+    queue.push(currentNode);
+
+    while (queue.length > 0) {
+      currentNode = queue.shift();
+
+      list.push(currentNode.value);
+
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+    }
+    return list;
+  }
+
+  breadthFirstSearchR(queue, list) {
+    if (!queue.length) {
+      return list;
+    }
+
+    let currentNode = queue.shift();
+    list.push(currentNode.value);
+    if (currentNode.left) {
+      queue.push(currentNode.left);
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right);
+    }
+  
+      return this.breadthFirstSearchR(queue, list)
+  }
+
+  DFSInorder(){
+    return traverseInorder(this.root, []);
+  }
+
+  DFSPreorder(){
+    return traversePreorder(this.root, []);
+  }
+
+  DFSPostorder(){
+    return traversePostorder(this.root, []);
+  }
 }
-
-const binaySearchTree = new BinarySearchTree();
-binaySearchTree.insert(9);
-binaySearchTree.insert(4);
-binaySearchTree.insert(6);
-binaySearchTree.insert(20);
-binaySearchTree.insert(170);
-binaySearchTree.insert(15);
-binaySearchTree.insert(1);
-binaySearchTree.remove(20)
-
 
 function traverse(node) {
   const tree = { value: node.value };
@@ -135,3 +176,76 @@ function traverse(node) {
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
 }
+
+
+/*
+      9
+  4       20
+1  6   15  170
+depthFirstSearch search types
+InOrder - [1, 4, 6, 9, 15, 20, 170]
+PreOrder - [9, 4, 1, 6, 20, 15, 170]
+PostOrder - [1, 6, 4, 15, 170, 20, 9] 
+*/
+
+function traverseInorder(node, list){
+
+  if(node.left){
+    traverseInorder(node.left, list);
+  }
+  list.push(node.value);
+
+  if(node.right){
+    traverseInorder(node.right, list)
+  }
+  
+  return list;
+};
+
+function traversePreorder(node, list){
+
+  list.push(node.value);
+
+  if(node.left){
+    traversePreorder(node.left, list);
+  }
+
+  if(node.right){
+    traversePreorder(node.right, list)
+  }
+
+  return list;
+};
+
+function traversePostorder(node, list){
+  
+  
+  if(node.left){
+    traversePostorder(node.left, list);
+  }
+  
+  if(node.right){
+    traversePostorder(node.right, list)
+  }
+
+  list.push(node.value);
+
+  return list;
+};
+
+
+const tree = new Tree();
+tree.insert(9);
+tree.insert(4);
+tree.insert(6);
+tree.insert(20);
+tree.insert(170);
+tree.insert(15);
+tree.insert(1);
+
+// tree.breadthFirstSearch();
+// tree.breadthFirstSearchR([tree.root], []);
+
+// tree.DFSInorder();
+// tree.DFSPreorder();
+tree.DFSPostorder();
