@@ -1,5 +1,5 @@
 
-/* Fibonacci Number: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... *each item is a sum of the two items before it*/
+/* Fibonacci Number: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... *each item is a sum of the two items before it*/
 
 // n is the index number of item not the value 
 function fibonacciRecursive(n){
@@ -22,6 +22,15 @@ function fibonacciIterative(n){
  } 
  return arr
 }
+
+/////////////////////////////////// CALL STACK ////////////////////////////////////
+// fibonacciR(2) = fibonacciR(1) + fibonacciR(1) = 1 + 1 = 2
+// fibonacciR(3) = fibonacciR(2) + fibonacciR(1) = 2 + 1 = 3
+// fibonacciR(5) = fibonacciR(3) + fibonacciR(2) = 3 + 2 = 5
+// fibonacciR(6) = fibonacciR(5) + fibonacciR(3) = 5 + 3 = 8
+// fibonacciR(7) = fibonacciR(6) + fibonacciR(5) = 8 + 5 = 13
+// fibonacciR(8) = fibonacciR(7) + fibonacciR(6) = 13 + 8 = 21
+///////////////////////////////////////////////////////////////////////////////////
 
 // console.log(fibonacciRecursive(89));
 // console.log(fibonacciIterative(8));
